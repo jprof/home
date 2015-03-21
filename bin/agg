@@ -1,0 +1,17 @@
+#! /bin/sh
+# Use the git alias root to find the root directory of a git repo perform
+# searches with ag from that directory. For some git versions, `git root` will
+# report the $PWD if you are not in a git repo so this script will only report
+# results from valid git root dirs.
+
+ROOT=`git root`
+
+if [ -z "$ROOT" ]; then
+    echo "Not in a git directory"
+else
+    if [ -e $ROOT/.git ]; then
+        ag "$@" $ROOT
+    else
+        echo "Not in a git directory"
+    fi
+fi

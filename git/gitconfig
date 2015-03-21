@@ -1,0 +1,10 @@
+[user]
+	email = jprof.dev@gmail.com
+	name = Justin Proffitt
+[color]
+    branch = auto
+    diff = auto
+    interactive = auto
+    status = auto
+[alias]
+	root = !pwd

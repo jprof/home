@@ -1,0 +1,3 @@
+alias vim="/usr/local/Cellar/vim/7.4.052/bin/vim"
+alias gvim="~/bin/mvim"
+alias tmux='TERM=screen-256color-bce tmux'

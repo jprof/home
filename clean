@@ -1,0 +1,27 @@
+#! /bin/sh
+
+echo "----| This will clean all symlinks and downloaded files. Are you sure? (y|n)"
+read answer
+
+if [ "$answer" = "y" ]; then
+    echo "----| Cleaning up files"
+else
+    echo "----| Not cleaning up files"
+    return 1
+fi
+
+
+for f in $PWD/bin/*
+do
+    b=`basename $f`
+    rm ~/bin/$b
+done
+
+rm ~/.tmux.conf ~/.vimrc ~/.gitconfig ~/.vim
+
+if [ -n "$ZSH" ]; then
+    rm -rf ~/.zshrc ~/.oh-my-zsh
+    chsh -s `which bash`
+else
+    sed -i '/home\/zsh/d' ~/.bashrc
+fi

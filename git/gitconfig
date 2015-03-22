@@ -8,3 +8,5 @@
     status = auto
 [alias]
 	root = !pwd
+[push]
+	default = nothing

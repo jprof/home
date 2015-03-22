@@ -1,0 +1,21 @@
+#! /bin/sh
+# Installations that are performed without a package manager
+
+mkdir -p ~/bin/
+
+if [ -e `which zsh` ]; then
+    echo "----| Installing oh-my-zsh"
+    wget https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh -O - | sh
+    echo "----| Installed oh-my-zsh with RC: $?"
+fi
+
+
+if [ -e ~/bin/lein ]; then
+    echo "----| lein already installed at ~/bin/lein"
+else
+    echo "----| Getting lein"
+    cd ~/bin/
+    wget -q https://raw.github.com/technomancy/leiningen/stable/bin/lein
+    echo "----| Got lein with RC: $?"
+    chmod 755 lein
+fi

@@ -1,0 +1,56 @@
+#! /bin/sh
+
+echo "----| Is this a linux or mac installation?"
+read SYS
+if [ "$SYS" = "linux" -o "$SYS" = "mac" ]; then
+    echo "----| Running with system set to $SYS"
+else
+    echo "----| Unrecognized system, please specify linux or mac"
+    return 1
+fi
+
+CURR_DIR=$PWD
+
+mkdir -p ~/github.com
+mkdir -p ~/bin
+
+
+ln -s $CURR_DIR/vim/vimrc ~/.vimrc
+ln -s $CURR_DIR/vim ~/.vim
+
+git clone https://github.com/gmarik/Vundle.vim.git ~/.vim/bundle/Vundle.vim
+vim +PluginInstall +qall
+
+echo "source-file $CURR_DIR/tmux/tmux.conf" >> ~/.tmux.conf
+echo "source-file $CURR_DIR/tmux/"$SYS"_tmux.conf" >> ~/.tmux.conf
+
+ln -s $CURR_DIR/git/gitconfig ~/.gitconfig
+
+if [ -e `which wget` ]; then
+    echo "----| Attempting to install lein and oh-my-zsh"
+    ./install
+fi
+
+
+if [ -e ~/.zshrc ]; then
+    SHRC=~/.zshrc
+    sed -i 's/robbyrussell/dallas/' ~/.zshrc
+else
+    SHRC=~/.bashrc
+fi
+
+echo "----| Creating symlinks to ~/bin/ scripts"
+for f in $CURR_DIR/bin/*
+do
+    ln -s $f ~/bin/.
+done
+
+echo "----| Adding aliases and setting path in $SHRC"
+echo "source $CURR_DIR/zsh/bin-include" >> $SHRC
+echo "source $CURR_DIR/zsh/aliases" >> $SHRC
+echo "source $CURR_DIR/zsh/"$SYS"_aliases" >> $SHRC
+
+if [ -e ~/.zshrc ]; then
+    echo "----| Changing login shell to zsh"
+    chsh -s `which zsh`
+fi

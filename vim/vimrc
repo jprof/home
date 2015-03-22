@@ -1,0 +1,269 @@
+" First, Vundle:
+se nocompatible
+filetype off
+
+set rtp+=~/.vim/bundle/Vundle.vim/
+call vundle#rc()
+
+syntax on
+filetype plugin indent on
+
+Bundle 'gmarik/vundle'
+
+Bundle 'altercation/vim-colors-solarized'
+Bundle 'jpalardy/vim-slime.git'
+Bundle 'scrooloose/nerdtree.git'
+Bundle 'fholgado/minibufexpl.vim.git'
+Bundle 'scrooloose/nerdcommenter.git'
+Bundle 'MarcWeber/vim-addon-mw-utils'
+Bundle 'tomtom/tlib_vim'
+Bundle 'garbas/vim-snipmate'
+Bundle 'honza/vim-snippets'
+Bundle 'scrooloose/syntastic.git'
+Bundle 'majutsushi/tagbar.git'
+Bundle 'tpope/vim-fugitive.git'
+Bundle 'Lokaltog/powerline.git'
+Bundle 'kchmck/vim-coffee-script'
+Bundle 'guns/vim-clojure-static.git'
+Bundle 'tpope/vim-leiningen.git'
+Bundle 'tpope/vim-fireplace.git'
+Bundle 'tpope/vim-sexp-mappings-for-regular-people'
+Bundle 'guns/vim-sexp'
+Bundle 'tpope/vim-repeat'
+Bundle 'tpope/vim-surround'
+Bundle 'sjl/gundo.vim.git'
+Bundle 'kien/ctrlp.vim.git'
+
+" Make vim incompatbile to vi.
+set nocompatible
+set modelines=0
+
+"TAB settings.
+set tabstop=4
+set shiftwidth=4
+set softtabstop=4
+set expandtab
+
+" More Common Settings.
+set encoding=utf-8
+set scrolloff=3
+set autoindent
+set showmode
+set showcmd
+set hidden
+set wildmenu
+set wildmode=list:longest
+
+"set cursorline
+set ttyfast
+set ruler
+set backspace=indent,eol,start
+set laststatus=2
+
+"set relativenumber
+set number
+set norelativenumber
+
+"set undofile
+set shell=/bin/bash
+set lazyredraw
+set matchtime=3
+
+"Changing Leader Key
+let mapleader = ","
+let maplocalleader = ";"
+
+let g:ctrlp_map = "<leader>t"
+let g:ctrlp_working_path_mode = "ra"
+
+" Set title to window
+set title
+
+" Dictionary path, from which the words are being looked up.
+set dictionary=/usr/share/dict/words
+
+" Enable Mouse
+set mouse=a
+
+"Settings for Searching and Moving
+nnoremap / /\v
+vnoremap / /\v
+set ignorecase
+set smartcase
+set gdefault
+set incsearch
+set showmatch
+set hlsearch
+nnoremap <leader><space> :noh<cr>
+nnoremap <tab> %
+vnoremap <tab> %
+
+" Make Vim to handle long lines nicely.
+set wrap
+set textwidth=79
+set formatoptions=qrn1
+"set colorcolumn=79
+
+" To  show special characters in Vim
+"set list
+set listchars=tab:▸\ ,eol:¬
+
+
+set nofoldenable
+set foldmethod=syntax
+
+nnoremap j gj
+nnoremap k gk
+
+" Get Rid of stupid Goddamned help keys
+inoremap <F1> <ESC>
+nnoremap <F1> <ESC>
+vnoremap <F1> <ESC>
+
+" Map : to ; also in command mode.
+nnoremap ; :
+
+" Set vim to save the file on focus out.
+au FocusLost * :wa
+
+" Buffer navigation
+nnoremap <leader>b :buffers<cr>:buffer<space>
+nnoremap <leader>n :bn<cr>
+nnoremap <leader>p :bp<cr>
+
+" Adding More Shorcuts keys using leader kye.
+" Leader Kye provide separate namespace for specific commands.
+",W Command to remove white space from a file.
+nnoremap <leader>W :%s/\s\+$//<cr>:let @/=''<CR>
+
+" ,ft Fold tag, helpful for HTML editing.
+nnoremap <leader>ft vatzf
+
+" ,q Re-hardwrap Paragraph
+nnoremap <leader>q gqip
+
+" ,v Select just pasted text.
+nnoremap <leader>v V`]
+
+" ,ev Shortcut to edit .vimrc file on the fly on a vertical window.
+nnoremap <leader>ev <C-w><C-v><C-l>:e $MYVIMRC<cr>
+
+" jj For Qicker Escaping between normal and editing mode.
+inoremap jj <ESC>
+
+" Omnicomplete via ,,
+inoremap <leader>, <C-x><C-o>
+
+se splitright
+"se splitbelow
+
+" Working with split screen nicely
+" Resize Split When the window is resized"
+au VimResized * :wincmd =
+
+" Wildmenu completion "
+set wildmenu
+set wildmode=list:longest
+set wildignore+=.hg,.git,.svn " Version Controls"
+set wildignore+=*.aux,*.out,*.toc "Latex Indermediate files"
+set wildignore+=*.jpg,*.bmp,*.gif,*.png,*.jpeg "Binary Imgs"
+set wildignore+=*.o,*.obj,*.exe,*.dll,*.manifest "Compiled Object files"
+set wildignore+=*.spl "Compiled speolling world list"
+set wildignore+=*.sw? "Vim swap files"
+set wildignore+=*.DS_Store "OSX SHIT"
+set wildignore+=*.luac "Lua byte code"
+set wildignore+=migrations "Django migrations"
+set wildignore+=*.pyc "Python Object codes"
+set wildignore+=*.orig "Merge resolution files"
+
+" Make Sure that Vim returns to the same line when we reopen a file"
+augroup line_return
+    au!
+    au BufReadPost *
+        \ if line("'\"") > 0 && line("'\"") <= line("$") |
+        \ execute 'normal! g`"zvzz' |
+        \ endif
+augroup END
+
+nnoremap g; g;zz
+
+" Gvim and vim
+syntax on
+"set t_Co=16
+set background=dark
+colorschem solarized
+
+syntax enable
+" Removing scrollbars
+if has("gui_running")
+    set guitablabel=%-0.12t%M
+    set guioptions-=T
+    set guioptions-=r
+    set guioptions-=L
+    set guioptions+=a
+    set guifont=Monospace\ 12
+    "set guioptions-=m
+    set listchars=tab:▸\ ,eol:¬         " Invisibles using the Textmate style
+endif
+
+" Special Settings for Consoles
+if !has("gui_running")
+    set t_Co=256
+    set background=light
+    colorschem solarized
+    "colorscheme desert
+endif
+
+" Source the vimrc file after saving it
+autocmd bufwritepost .vimrc source ~/.vimrc
+
+" Plugin Settings
+
+" Mapping to NERDTree
+nnoremap <C-n> :NERDTreeToggle<cr>
+let NERDTreeIgnore=['\.vim$', '\~$', '\.pyc$']
+
+" Mini Buffer some settigns."
+let g:miniBufExplMapWindowNavVim = 1
+let g:miniBufExplMapWindowNavArrows = 1
+let g:miniBufExplMapCTabSwitchBufs = 1
+let g:miniBufExplModSelTarget = 1
+
+" vim-slime
+let g:slime_target = "tmux"
+let g:slime_python_ipython = 1
+
+" Tagbar key bindings."
+nmap <leader>l <ESC>:TagbarToggle<cr>
+imap <leader>l <ESC>:TagbarToggle<cr>i
+
+" Clojure eval
+nnoremap <localleader>e :Eval <CR>
+
+nnoremap <leader>u :GundoToggle <CR>
+
+
+" =========== END Plugin Settings =========="
+"
+au BufNewFile,BufReadPost *.coffee setl shiftwidth=2 tabstop=2 expandtab softtabstop=2 ft=coffee
+au BufNewFile,BufReadPost *.md set ft=markdown
+au BufNewFile,BufReadPost *.cljs set ft=clojure
+
+au InsertLeave * if pumvisible() == 0|pclose|endif
+
+set rtp+=~/.vim/bundle/powerline/powerline/bindings/vim
+let g:ycm_autoclose_preview_window_after_insertion=1
+
+if has('conceal')
+    if has('autocmd')
+        autocmd Syntax clojure syn keyword Operator not conceal cchar=¬
+        autocmd Syntax * syn keyword Operator lambda conceal cchar=λ
+        autocmd Syntax ruby syn match rubyKeyword "->" conceal cchar=λ
+        autocmd Syntax haskell syn match hsKeyword "\\" conceal cchar=λ
+        autocmd Syntax clojure syn keyword clojureFunc fn conceal cchar=λ
+    endif
+    hi! link Conceal Operator
+    set conceallevel=2
+endif
+
+let g:ctrlp_custom_ignore = { 'dir': '\.git$\|\.hg$\|\.svn$\|\target\/' }

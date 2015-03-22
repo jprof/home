@@ -25,6 +25,7 @@ echo "source-file $CURR_DIR/tmux/tmux.conf" >> ~/.tmux.conf
 echo "source-file $CURR_DIR/tmux/"$SYS"_tmux.conf" >> ~/.tmux.conf
 
 ln -s $CURR_DIR/git/gitconfig ~/.gitconfig
+ln -s $CURR_DIR/pentadactyl/pentadactylrc ~/.pentadactylrc
 
 if [ -e `which wget` ]; then
     echo "----| Attempting to install lein and oh-my-zsh"

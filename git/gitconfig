@@ -7,6 +7,6 @@
     interactive = auto
     status = auto
 [alias]
-	root = !pwd
+	root = rev-parse --show-toplevel
 [push]
 	default = nothing

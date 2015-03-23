@@ -6,12 +6,8 @@
 
 ROOT=`git root`
 
-if [ -z "$ROOT" ]; then
+if [ "$?" -ne "0" ]; then
     echo "Not in a git directory"
 else
-    if [ -e $ROOT/.git ]; then
-        ag "$@" $ROOT
-    else
-        echo "Not in a git directory"
-    fi
+    ag "$@" $ROOT
 fi

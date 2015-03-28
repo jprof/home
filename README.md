@@ -13,7 +13,10 @@ Nice to haves:
 ### Usage ###
 
 To get started:
-    git clone https://github.com/jprof/home.git
-    cd home
-    ./bootstrap
+
+```
+git clone https://github.com/jprof/home.git
+cd home
+./bootstrap
+```
 

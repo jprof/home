@@ -33,6 +33,8 @@ Bundle 'tpope/vim-repeat'
 Bundle 'tpope/vim-surround'
 Bundle 'sjl/gundo.vim.git'
 Bundle 'kien/ctrlp.vim.git'
+Bundle 'airblade/vim-gitgutter.git'
+Bundle 'tpope/vim-dispatch.git'
 
 " Make vim incompatbile to vi.
 set nocompatible

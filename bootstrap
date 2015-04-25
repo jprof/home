@@ -14,6 +14,12 @@ CURR_DIR=$PWD
 mkdir -p ~/github.com
 mkdir -p ~/bin
 
+mv ~/.vimrc ~/.vimrc_old
+mv ~/.vim ~/.vim_old
+
+mv ~/.gitconfig ~/.gitconfig_old
+mv ~/.tmux.conf ~/.tmux.conf_old
+mv ~/.pentadactylrc ~/.pentadactylrc_old
 
 ln -s $CURR_DIR/vim/vimrc ~/.vimrc
 ln -s $CURR_DIR/vim ~/.vim
@@ -34,9 +40,11 @@ fi
 
 
 if [ -e ~/.zshrc ]; then
+    mv ~/.zshrc ~/.zshrc_old
     SHRC=~/.zshrc
     sed -i 's/robbyrussell/dallas/' ~/.zshrc
 else
+    mv ~/.bashrc ~/.bashrc_old
     SHRC=~/.bashrc
 fi
 

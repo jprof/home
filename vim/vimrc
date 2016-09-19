@@ -198,7 +198,7 @@ nnoremap g; g;zz
 syntax on
 "set t_Co=16
 set background=dark
-colorschem solarized
+colorschem desert
 
 syntax enable
 " Removing scrollbars
@@ -215,9 +215,9 @@ endif
 
 " Special Settings for Consoles
 if !has("gui_running")
-    set t_Co=256
-    set background=light
-    colorschem solarized
+    "set t_Co=256
+    "set background=light
+    colorschem desert
     "colorscheme desert
 endif
 

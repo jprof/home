@@ -3,38 +3,43 @@ se nocompatible
 filetype off
 
 set rtp+=~/.vim/bundle/Vundle.vim/
-call vundle#rc()
+"call vundle#rc()
+call vundle#begin()
 
 syntax on
+
+Plugin 'gmarik/vundle'
+
+Plugin 'altercation/vim-colors-solarized'
+Plugin 'jpalardy/vim-slime.git'
+Plugin 'scrooloose/nerdtree.git'
+Plugin 'fholgado/minibufexpl.vim.git'
+Plugin 'scrooloose/nerdcommenter.git'
+Plugin 'MarcWeber/vim-addon-mw-utils'
+Plugin 'tomtom/tlib_vim'
+Plugin 'garbas/vim-snipmate'
+Plugin 'honza/vim-snippets'
+Plugin 'scrooloose/syntastic.git'
+Plugin 'majutsushi/tagbar.git'
+Plugin 'tpope/vim-fugitive.git'
+Plugin 'Lokaltog/powerline.git'
+Plugin 'kchmck/vim-coffee-script'
+Plugin 'guns/vim-clojure-static.git'
+Plugin 'tpope/vim-leiningen.git'
+Plugin 'tpope/vim-fireplace.git'
+Plugin 'tpope/vim-sexp-mappings-for-regular-people'
+Plugin 'guns/vim-sexp'
+Plugin 'tpope/vim-repeat'
+Plugin 'tpope/vim-surround'
+Plugin 'sjl/gundo.vim.git'
+Plugin 'kien/ctrlp.vim.git'
+Plugin 'airblade/vim-gitgutter.git'
+Plugin 'tpope/vim-dispatch.git'
+Plugin 'rust-lang/rust.vim'
+
+call vundle#end()
+
 filetype plugin indent on
-
-Bundle 'gmarik/vundle'
-
-Bundle 'altercation/vim-colors-solarized'
-Bundle 'jpalardy/vim-slime.git'
-Bundle 'scrooloose/nerdtree.git'
-Bundle 'fholgado/minibufexpl.vim.git'
-Bundle 'scrooloose/nerdcommenter.git'
-Bundle 'MarcWeber/vim-addon-mw-utils'
-Bundle 'tomtom/tlib_vim'
-Bundle 'garbas/vim-snipmate'
-Bundle 'honza/vim-snippets'
-Bundle 'scrooloose/syntastic.git'
-Bundle 'majutsushi/tagbar.git'
-Bundle 'tpope/vim-fugitive.git'
-Bundle 'Lokaltog/powerline.git'
-Bundle 'kchmck/vim-coffee-script'
-Bundle 'guns/vim-clojure-static.git'
-Bundle 'tpope/vim-leiningen.git'
-Bundle 'tpope/vim-fireplace.git'
-Bundle 'tpope/vim-sexp-mappings-for-regular-people'
-Bundle 'guns/vim-sexp'
-Bundle 'tpope/vim-repeat'
-Bundle 'tpope/vim-surround'
-Bundle 'sjl/gundo.vim.git'
-Bundle 'kien/ctrlp.vim.git'
-Bundle 'airblade/vim-gitgutter.git'
-Bundle 'tpope/vim-dispatch.git'
 
 " Make vim incompatbile to vi.
 set nocompatible
@@ -250,6 +255,7 @@ nnoremap <leader>u :GundoToggle <CR>
 au BufNewFile,BufReadPost *.coffee setl shiftwidth=2 tabstop=2 expandtab softtabstop=2 ft=coffee
 au BufNewFile,BufReadPost *.md set ft=markdown
 au BufNewFile,BufReadPost *.cljs set ft=clojure
+au BufNewFile,BufReadPost *.rs set ft=rust
 
 au InsertLeave * if pumvisible() == 0|pclose|endif
 

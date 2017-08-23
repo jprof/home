@@ -17,7 +17,7 @@ Plugin 'fholgado/minibufexpl.vim.git'
 Plugin 'scrooloose/nerdcommenter.git'
 Plugin 'MarcWeber/vim-addon-mw-utils'
 Plugin 'tomtom/tlib_vim'
-Plugin 'garbas/vim-snipmate'
+Plugin 'SirVer/ultisnips'
 Plugin 'honza/vim-snippets'
 Plugin 'scrooloose/syntastic.git'
 Plugin 'majutsushi/tagbar.git'
@@ -36,6 +36,7 @@ Plugin 'kien/ctrlp.vim.git'
 Plugin 'airblade/vim-gitgutter.git'
 Plugin 'tpope/vim-dispatch.git'
 Plugin 'rust-lang/rust.vim'
+Plugin 'Valloric/YouCompleteMe'
 
 call vundle#end()
 
@@ -275,3 +276,7 @@ if has('conceal')
 endif
 
 let g:ctrlp_custom_ignore = { 'dir': '\.git$\|\.hg$\|\.svn$\|\target\/' }
+
+let g:UltiSnipsExpandTrigger="<c-j>"
+let g:UltiSnipsExpandForwardTrigger="<c-b>"
+let g:UltiSnipsExpandBackwardTrigger="<c-z>"

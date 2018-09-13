@@ -19,7 +19,6 @@ mv ~/.vim ~/.vim_old
 
 mv ~/.gitconfig ~/.gitconfig_old
 mv ~/.tmux.conf ~/.tmux.conf_old
-mv ~/.pentadactylrc ~/.pentadactylrc_old
 
 ln -s $CURR_DIR/vim/vimrc ~/.vimrc
 ln -s $CURR_DIR/vim ~/.vim
@@ -31,7 +30,6 @@ echo "source-file $CURR_DIR/tmux/tmux.conf" >> ~/.tmux.conf
 echo "source-file $CURR_DIR/tmux/"$SYS"_tmux.conf" >> ~/.tmux.conf
 
 ln -s $CURR_DIR/git/gitconfig ~/.gitconfig
-ln -s $CURR_DIR/pentadactyl/pentadactylrc ~/.pentadactylrc
 
 if [ -e `which wget` ]; then
     echo "----| Attempting to install lein and oh-my-zsh"

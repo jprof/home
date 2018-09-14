@@ -160,6 +160,10 @@ nnoremap <leader>ev <C-w><C-v><C-l>:e $MYVIMRC<cr>
 " jj For Qicker Escaping between normal and editing mode.
 inoremap jj <ESC>
 
+" Yank and paste to system clipboard
+noremap <leader>y "+y
+noremap <leader>p "+p
+
 " Omnicomplete via ,,
 inoremap <leader>, <C-x><C-o>
 

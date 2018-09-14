@@ -1,0 +1,9 @@
+#! /bin/sh
+
+if [ "$1" = "" ]; then
+    echo "Please specify a color to swap to."
+    exit 1
+fi
+
+COLOR=$1
+sed -i 's/colorschem.*/colorscheme '$COLOR'/' ~/.vimrc

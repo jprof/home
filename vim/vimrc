@@ -37,6 +37,7 @@ Plugin 'airblade/vim-gitgutter.git'
 Plugin 'tpope/vim-dispatch.git'
 Plugin 'rust-lang/rust.vim'
 Plugin 'Valloric/YouCompleteMe'
+Plugin 'leafgarland/typescript-vim.git'
 
 call vundle#end()
 
@@ -257,6 +258,7 @@ au BufNewFile,BufReadPost *.coffee setl shiftwidth=2 tabstop=2 expandtab softtab
 au BufNewFile,BufReadPost *.md set ft=markdown
 au BufNewFile,BufReadPost *.cljs set ft=clojure
 au BufNewFile,BufReadPost *.rs set ft=rust
+au BufNewFile,BufReadPost *.ts set ft=typescript
 
 au InsertLeave * if pumvisible() == 0|pclose|endif
 

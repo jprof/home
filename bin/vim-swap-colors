@@ -6,4 +6,4 @@ if [ "$1" = "" ]; then
 fi
 
 COLOR=$1
-sed -i 's/colorschem.*/colorscheme '$COLOR'/' ~/.vimrc
+sed -i 's/colorschem.*/colorschem '$COLOR'/' $(readlink -f ~/.vimrc)

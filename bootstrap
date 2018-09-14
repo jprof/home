@@ -31,12 +31,6 @@ echo "source-file $CURR_DIR/tmux/"$SYS"_tmux.conf" >> ~/.tmux.conf
 
 ln -s $CURR_DIR/git/gitconfig ~/.gitconfig
 
-if [ -e `which wget` ]; then
-    echo "----| Attempting to install lein and oh-my-zsh"
-    ./install
-fi
-
-
 if [ -e ~/.zshrc ]; then
     mv ~/.zshrc ~/.zshrc_old
     SHRC=~/.zshrc

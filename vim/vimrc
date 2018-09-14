@@ -284,5 +284,5 @@ endif
 let g:ctrlp_custom_ignore = { 'dir': '\.git$\|\.hg$\|\.svn$\|\target\/' }
 
 let g:UltiSnipsExpandTrigger="<c-j>"
-let g:UltiSnipsExpandForwardTrigger="<c-b>"
-let g:UltiSnipsExpandBackwardTrigger="<c-z>"
+let g:UltiSnipsJumpForwardTrigger="<c-b>"
+let g:UltiSnipsJumpBackwardTrigger="<c-z>"

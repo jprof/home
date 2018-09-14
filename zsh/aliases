@@ -11,3 +11,6 @@ alias gls="git log --decorate --stat"
 alias gs="git status"
 alias gituncommit="git reset --soft HEAD~1"
 alias gitinit="git init && touch README && git add README && git commit README -m \"Initial commit\""
+
+# tmux
+alias tmux-alert="echo -e '\a'"

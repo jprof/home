@@ -31,13 +31,19 @@ echo "source-file $CURR_DIR/tmux/"$SYS"_tmux.conf" >> ~/.tmux.conf
 
 ln -s $CURR_DIR/git/gitconfig ~/.gitconfig
 
-if [ -e ~/.zshrc ]; then
-    mv ~/.zshrc ~/.zshrc_old
-    SHRC=~/.zshrc
-    sed -i 's/robbyrussell/dallas/' ~/.zshrc
-else
-    mv ~/.bashrc ~/.bashrc_old
-    SHRC=~/.bashrc
+mv ~/.zshrc ~/.zshrc_old
+SHRC=~/.zshrc
+mv ~/.bashrc ~/.bashrc_old
+SHRC=~/.bashrc
+
+if which zsh; then
+    echo "---| zsh present, would you like to install oh-my-zsh? (Y or N)"
+    read INSTALL_OH_MY_ZSH
+    if [ "$INSTALL_OH_MY_ZSH" = "Y" ]; then
+        echo "---| kill the zsh process after it completes to continue running bootstrap script!"
+        sh -c "$(wget https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh -O -)"
+        sed -i 's/robbyrussell/dallas/' ~/.zshrc
+    fi
 fi
 
 echo "----| Creating symlinks to ~/bin/ scripts"
@@ -50,8 +56,3 @@ echo "----| Adding aliases and setting path in $SHRC"
 echo "source $CURR_DIR/zsh/bin-include" >> $SHRC
 echo "source $CURR_DIR/zsh/aliases" >> $SHRC
 echo "source $CURR_DIR/zsh/"$SYS"_aliases" >> $SHRC
-
-if [ -e ~/.zshrc ]; then
-    echo "----| Changing login shell to zsh"
-    chsh -s `which zsh`
-fi

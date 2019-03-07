@@ -34,7 +34,6 @@ ln -s $CURR_DIR/git/gitconfig ~/.gitconfig
 mv ~/.zshrc ~/.zshrc_old
 SHRC=~/.zshrc
 mv ~/.bashrc ~/.bashrc_old
-SHRC=~/.bashrc
 
 if which zsh; then
     echo "---| zsh present, would you like to install oh-my-zsh? (Y or N)"

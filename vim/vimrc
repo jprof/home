@@ -289,3 +289,4 @@ let g:UltiSnipsJumpBackwardTrigger="<c-z>"
 
 let g:ycm_filetype_blacklist = {'gitcommit': 1}
 
+command Less :!less %

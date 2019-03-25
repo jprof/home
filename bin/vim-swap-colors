@@ -7,3 +7,10 @@ fi
 
 COLOR=$1
 sed -i 's/colorschem.*/colorschem '$COLOR'/' $(readlink -f ~/.vimrc)
+
+if [ "$2" = "" ]; then
+    echo "Not setting background color"
+else
+    BG_COLOR=$2
+    sed -i 's/background=.*/background='$BG_COLOR'/' $(readlink -f ~/.vimrc)
+fi

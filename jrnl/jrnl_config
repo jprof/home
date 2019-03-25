@@ -1,0 +1,13 @@
+{
+  "highlight": true,
+  "timeformat": "%Y-%m-%d %H:%M",
+  "journals": {
+    "default": "/home/justin/.journal.md"
+  },
+  "default_minute": 0,
+  "editor": "vim",
+  "encrypt": false,
+  "tagsymbols": "@",
+  "default_hour": 9,
+  "linewrap": 200
+}

@@ -55,3 +55,4 @@ echo "----| Adding aliases and setting path in $SHRC"
 echo "source $CURR_DIR/zsh/bin-include" >> $SHRC
 echo "source $CURR_DIR/zsh/aliases" >> $SHRC
 echo "source $CURR_DIR/zsh/"$SYS"_aliases" >> $SHRC
+echo "source $CURR_DIR/jrnl/jrnl_aliases" >> $SHRC

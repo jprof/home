@@ -1,0 +1,3 @@
+alias jrnl=' jrnl'
+alias todo=' jrnl @todo'
+alias todols=' jrnl @todo --short'

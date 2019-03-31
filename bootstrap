@@ -20,6 +20,8 @@ mv ~/.vim ~/.vim_old
 mv ~/.gitconfig ~/.gitconfig_old
 mv ~/.tmux.conf ~/.tmux.conf_old
 
+git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
+
 ln -s $CURR_DIR/vim/vimrc ~/.vimrc
 ln -s $CURR_DIR/vim ~/.vim
 

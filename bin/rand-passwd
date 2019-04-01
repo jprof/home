@@ -1,0 +1,4 @@
+#! /bin/sh
+# Generate a base64 encoded string of 32 random bytes via openssl
+
+openssl rand -base64 32

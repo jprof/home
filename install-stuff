@@ -31,7 +31,7 @@ curl https://pyenv.run | bash
 git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
  
 # Vim 
-PYTHON_CONFIG_DIR=${1}
+PYTHON_CONFIG_DIR=$(ls -d /usr/lib/python*/config-* | tail -n 1)
 USER_PREFIX_DIR=$PWD/usr
 mkdir -p ${USER_PREFIX_DIR}
 

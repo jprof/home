@@ -16,7 +16,7 @@ ${SUDO} apt-get install -y python3-dev
 #${SUDO} apt-get install -y zsh
 
 mkdir -p ~/github.com ~/bin/
-pushd github.com/
+pushd ~/github.com/
 git clone https://github.com/jprof/home
 ln -s ${PWD}/home/vim/vimrc ~/.vimrc
 popd

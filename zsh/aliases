@@ -10,6 +10,7 @@ alias glp="git log --decorate -p"
 alias gls="git log --decorate --stat"
 alias glc="git log --left-right --graph --cherry-mark --oneline"
 alias gs="git status"
+alias gfat="git fetch --all --prune --jobs=10 --tag"
 alias gituncommit="git reset --soft HEAD~1"
 alias gitinit="git init && touch README && git add README && git commit README -m \"Initial commit\""
 

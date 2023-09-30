@@ -22,19 +22,8 @@ echo "source-file $CURR_DIR/tmux/"$SYS"_tmux.conf" >> ~/.tmux.conf
 
 ln -s $CURR_DIR/git/gitconfig ~/.gitconfig
 
-mv ~/.zshrc ~/.zshrc_old
 SHRC=~/.zshrc
-mv ~/.bashrc ~/.bashrc_old
-
-if which zsh; then
-    echo "---| zsh present, would you like to install oh-my-zsh? (Y or N)"
-    read INSTALL_OH_MY_ZSH
-    if [ "$INSTALL_OH_MY_ZSH" = "Y" ]; then
-        echo "---| kill the zsh process after it completes to continue running bootstrap script!"
-        sh -c "$(wget https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh -O -)"
-        sed -i 's/robbyrussell/dallas/' ~/.zshrc
-    fi
-fi
+sed -i 's/robbyrussell/dallas/' ~/.zshrc
 
 echo "----| Creating symlinks to ~/bin/ scripts"
 for f in $CURR_DIR/bin/*

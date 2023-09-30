@@ -14,9 +14,6 @@ CURR_DIR=$PWD
 mkdir -p ~/github.com
 mkdir -p ~/bin
 
-mv ~/.vimrc ~/.vimrc_old
-mv ~/.vim ~/.vim_old
-
 mv ~/.gitconfig ~/.gitconfig_old
 mv ~/.tmux.conf ~/.tmux.conf_old
 

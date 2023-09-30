@@ -13,7 +13,7 @@ ${SUDO} apt-get install -y wget
 ${SUDO} apt-get install -y htop
 ${SUDO} apt-get install -y python3
 ${SUDO} apt-get install -y python3-dev
-#${SUDO} apt-get install -y zsh
+${SUDO} apt-get install -y zsh
 
 mkdir -p ~/github.com ~/bin/
 pushd ~/github.com/

@@ -1,0 +1,3 @@
+if [ "$GNOME_TERMINAL_SCREEN" != "" ]; then
+    sh ~/.vim/bundle/vim-solarized8/scripts/solarized8.sh
+fi

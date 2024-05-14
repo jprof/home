@@ -11,6 +11,7 @@ syntax on
 Plugin 'gmarik/vundle'
 
 Plugin 'altercation/vim-colors-solarized'
+Plugin 'lifepillar/vim-solarized8'
 Plugin 'jpalardy/vim-slime.git'
 Plugin 'scrooloose/nerdtree.git'
 Plugin 'fholgado/minibufexpl.vim.git'
@@ -221,12 +222,12 @@ endif
 
 " Special Settings for Consoles
 if !has("gui_running")
-    set t_Co=256
-    "set background=dark
+    "set t_Co=16
+    set background=dark
     "set g:solarized_termtrans=1
     "set g:solarized_termcolors=256
     "set background=light
-    colorschem solarized
+    colorschem solarized8
     "colorscheme desert
 endif
 

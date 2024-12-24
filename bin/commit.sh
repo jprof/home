@@ -10,7 +10,7 @@ FILES_CHANGED_OR_TO_ADD=$(git status --porcelain=v1 | wc -l)
 if [ "${FILES_CHANGED_OR_TO_ADD}" != "0" ]; then
     echo ${FILES_CHANGED_OR_TO_ADD}
     git add -A .
-    git commit -m "Auto update"
+    git commit -m "Auto update from $(hostname) on $(date)"
     git pull --rebase
     if [ "${?}" != "0" ]; then
         echo "Failed to pull and rebase"
